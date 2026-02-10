@@ -35,7 +35,7 @@ export default function SwaggerPage() {
 
       {/* Swagger UI */}
       <div className="swagger-dark-theme min-h-screen">
-        <SwaggerUI url="https://vettr-backend.vercel.app/openapi.json" />
+        <SwaggerUI url="https://vettr-backend.vercel.app/v1/openapi.json" />
       </div>
 
       <style jsx global>{`

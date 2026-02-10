@@ -38,7 +38,7 @@ interface TagGroup {
 
 async function getApiSpec(): Promise<OpenAPISpec> {
   try {
-    const res = await fetch("https://vettr-backend.vercel.app/openapi.json", {
+    const res = await fetch("https://vettr-backend.vercel.app/v1/openapi.json", {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return {};
