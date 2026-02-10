@@ -11,6 +11,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        vettr: {
+          navy: "#0D1B2A",
+          dark: "#1B2838",
+          card: "#1E3348",
+          accent: "#00E676",
+          green: "#00E676",
+          red: "#FF5252",
+          yellow: "#FFC107",
+          blue: "#448AFF",
+        },
       },
     },
   },
