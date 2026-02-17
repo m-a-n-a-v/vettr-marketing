@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VettrWordmark } from "./VettrLogo";
 
 const footerLinks = {
   Product: [
@@ -49,11 +50,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-xl font-bold">
-              <span className="text-vettr-accent">V</span>
-              <span className="text-white">ETTR</span>
-            </span>
+          <div className="flex items-center">
+            <VettrWordmark size="sm" />
           </div>
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} VETTR. All rights reserved.
