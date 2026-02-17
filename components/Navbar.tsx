@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { VettrWordmark } from "./VettrLogo";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -19,8 +18,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <VettrWordmark size="default" />
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-2xl font-bold tracking-tight">
+              <span className="text-vettr-accent">V</span>
+              <span className="text-white">ETTR</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
