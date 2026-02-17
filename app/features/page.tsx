@@ -1,41 +1,44 @@
-import Link from "next/link";
-import type { Metadata } from "next";
-import DownloadButtons from "@/components/DownloadButtons";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Features - VETTR",
-  description:
-    "Explore VETTR features: VETR Scores, Red Flag Detection, Executive Pedigree tracking, Filing Analysis, and Real-time Alerts for mining stocks.",
-};
+import { useState } from "react";
+import Link from "next/link";
+import JoinWaitlist from "@/components/JoinWaitlist";
 
 const scoreRanges = [
   {
-    range: "80 - 100",
-    label: "Strong Buy",
-    color: "bg-vettr-green",
-    textColor: "text-vettr-green",
-    description: "Excellent fundamentals, clean management, strong filings",
+    range: "90 - 100",
+    label: "Elite (Strong Buy)",
+    color: "bg-emerald-500",
+    textColor: "text-emerald-400",
+    description: "Rare combination of cash, pedigree, and structure",
   },
   {
-    range: "60 - 79",
-    label: "Buy",
-    color: "bg-vettr-blue",
-    textColor: "text-vettr-blue",
-    description: "Good fundamentals with minor areas to monitor",
+    range: "75 - 89",
+    label: "Contender (Accumulate)",
+    color: "bg-teal-500",
+    textColor: "text-teal-400",
+    description: "Good company, minor flaws — e.g., slightly low liquidity",
   },
   {
-    range: "40 - 59",
-    label: "Hold",
-    color: "bg-vettr-yellow",
-    textColor: "text-vettr-yellow",
-    description: "Mixed signals — further research recommended",
+    range: "50 - 74",
+    label: "Watchlist (Hold)",
+    color: "bg-amber-500",
+    textColor: "text-amber-400",
+    description: "Average. Needs a catalyst or cash injection",
   },
   {
-    range: "0 - 39",
-    label: "Caution",
-    color: "bg-vettr-red",
-    textColor: "text-vettr-red",
-    description: "Significant concerns identified across multiple areas",
+    range: "30 - 49",
+    label: "Speculative (Avoid)",
+    color: "bg-orange-500",
+    textColor: "text-orange-400",
+    description: "High risk, high dilution, or low cash",
+  },
+  {
+    range: "0 - 29",
+    label: "Toxic (Strong Sell)",
+    color: "bg-red-500",
+    textColor: "text-red-400",
+    description: "Imminent bankruptcy risk or lifestyle company",
   },
 ];
 
@@ -71,7 +74,7 @@ const filingTypes = [
 const alertTypes = [
   "Price movement beyond threshold",
   "New filing published",
-  "VETR Score changes",
+  "VETTR Score changes",
   "New red flags detected",
   "Executive changes",
   "Insider trading activity",
@@ -80,11 +83,13 @@ const alertTypes = [
 const tiers = [
   {
     name: "Free",
-    price: "$0",
+    monthlyPrice: "$0",
+    annualPrice: "$0",
     period: "forever",
+    annualPeriod: "forever",
     features: [
       "5 stock watchlist",
-      "Basic VETR Scores",
+      "Basic VETTR Scores",
       "Limited red flag alerts",
       "Weekly email digest",
     ],
@@ -93,11 +98,14 @@ const tiers = [
   },
   {
     name: "Pro",
-    price: "$9.99",
+    monthlyPrice: "$19.99",
+    annualPrice: "$199",
     period: "/month",
+    annualPeriod: "/year",
+    savings: "Save $40/yr",
     features: [
       "25 stock watchlist",
-      "Full VETR Score breakdown",
+      "Full VETTR Score breakdown",
       "All red flag categories",
       "Executive pedigree access",
       "Real-time push alerts",
@@ -108,11 +116,14 @@ const tiers = [
   },
   {
     name: "Premium",
-    price: "$24.99",
+    monthlyPrice: "$39.99",
+    annualPrice: "$399",
     period: "/month",
+    annualPeriod: "/year",
+    savings: "Save $80/yr",
     features: [
       "Unlimited watchlist",
-      "Full VETR Score + history",
+      "Full VETTR Score + history",
       "All red flag categories + trends",
       "Full executive pedigree + network",
       "Priority real-time alerts",
@@ -126,6 +137,8 @@ const tiers = [
 ];
 
 export default function FeaturesPage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   return (
     <>
       {/* Hero */}
@@ -142,18 +155,18 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* VETR Score */}
+      {/* VETTR Score */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white">VETR Score</h2>
+            <h2 className="text-3xl font-bold text-white">VETTR Score</h2>
             <p className="mt-3 text-gray-400 max-w-xl mx-auto">
               Our proprietary scoring system rates stocks from 0 to 100 based on
               a comprehensive analysis of financials, management quality, and
               public filings.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {scoreRanges.map((range) => (
               <div
                 key={range.label}
@@ -363,6 +376,34 @@ export default function FeaturesPage() {
               Start free and upgrade when you are ready for more powerful
               features.
             </p>
+
+            {/* Billing Toggle */}
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <span className={`text-sm font-medium ${!isAnnual ? "text-white" : "text-gray-400"}`}>
+                Monthly
+              </span>
+              <button
+                onClick={() => setIsAnnual(!isAnnual)}
+                className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ${
+                  isAnnual ? "bg-vettr-accent" : "bg-white/20"
+                }`}
+                aria-label="Toggle annual billing"
+              >
+                <span
+                  className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
+                    isAnnual ? "translate-x-6" : "translate-x-1"
+                  }`}
+                />
+              </button>
+              <span className={`text-sm font-medium ${isAnnual ? "text-white" : "text-gray-400"}`}>
+                Annual
+              </span>
+              {isAnnual && (
+                <span className="text-xs font-semibold text-vettr-accent bg-vettr-accent/10 px-2 py-1 rounded-full">
+                  Save up to 17%
+                </span>
+              )}
+            </div>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {tiers.map((tier) => (
@@ -382,10 +423,17 @@ export default function FeaturesPage() {
                 <h3 className="text-xl font-bold text-white">{tier.name}</h3>
                 <div className="mt-4 flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-white">
-                    {tier.price}
+                    {isAnnual ? tier.annualPrice : tier.monthlyPrice}
                   </span>
-                  <span className="text-sm text-gray-400">{tier.period}</span>
+                  <span className="text-sm text-gray-400">
+                    {isAnnual ? tier.annualPeriod : tier.period}
+                  </span>
                 </div>
+                {isAnnual && tier.savings && (
+                  <div className="mt-2 text-xs font-semibold text-vettr-accent">
+                    {tier.savings}
+                  </div>
+                )}
                 <ul className="mt-6 space-y-3">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2">
@@ -407,7 +455,7 @@ export default function FeaturesPage() {
                   ))}
                 </ul>
                 <Link
-                  href="#"
+                  href="#waitlist"
                   className={`mt-8 block text-center py-3 rounded-lg text-sm font-semibold transition-colors ${
                     tier.highlighted
                       ? "bg-vettr-accent text-vettr-navy hover:bg-vettr-accent/90"
@@ -423,18 +471,16 @@ export default function FeaturesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-20" id="waitlist">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Start vetting your stocks today
+            Be the first to try VETTR
           </h2>
           <p className="text-gray-400 mb-8">
-            Download VETTR and get instant access to VETR Scores, red flag
+            Join the waitlist and get early access to VETTR Scores, red flag
             detection, and executive pedigree tracking.
           </p>
-          <div className="flex justify-center">
-            <DownloadButtons />
-          </div>
+          <JoinWaitlist />
         </div>
       </section>
     </>

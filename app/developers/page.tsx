@@ -76,7 +76,7 @@ const apiGroups = [
   { name: "Stocks", description: "List, search, get by ticker, and pagination" },
   { name: "Filings", description: "Regulatory filings with filtering by type" },
   { name: "Executives", description: "Management team data and profiles" },
-  { name: "VETR Score", description: "Score calculation, breakdown, and history" },
+  { name: "VETTR Score", description: "Score calculation, breakdown, and history" },
   { name: "Red Flags", description: "Detection, analysis, and severity tracking" },
   { name: "Alerts", description: "Custom alert rules and notifications" },
   { name: "Watchlist", description: "User watchlist management and tracking" },

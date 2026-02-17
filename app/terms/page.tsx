@@ -70,7 +70,7 @@ export default function TermsPage() {
             5. Not Financial Advice
           </h2>
           <p className="text-gray-400 leading-relaxed">
-            The information provided through VETTR, including VETR Scores, red
+            The information provided through VETTR, including VETTR Scores, red
             flag alerts, executive pedigree data, and filing analyses, is for
             informational purposes only. It should not be construed as
             financial advice, investment recommendations, or endorsements of

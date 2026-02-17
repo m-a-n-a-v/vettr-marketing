@@ -1,10 +1,10 @@
 import Link from "next/link";
-import DownloadButtons from "@/components/DownloadButtons";
+import JoinWaitlist from "@/components/JoinWaitlist";
 
 const stats = [
-  { value: "25+", label: "Stocks Tracked" },
-  { value: "90+", label: "Executives" },
-  { value: "75+", label: "Filings Analyzed" },
+  { value: "1,000+", label: "Tickers Tracked" },
+  { value: "500+", label: "Executives" },
+  { value: "750+", label: "Filings Analyzed" },
   { value: "Real-time", label: "Alerts" },
 ];
 
@@ -20,7 +20,7 @@ const features = [
         />
       </svg>
     ),
-    title: "VETR Score",
+    title: "VETTR Score",
     description:
       "Proprietary scoring from 0-100 analyzing financials, management, and filings to give you a clear picture of stock quality.",
   },
@@ -80,7 +80,7 @@ const steps = [
   {
     number: "02",
     title: "Analyze",
-    description: "Review VETR scores, red flags, executive pedigree, and filing analysis in one place.",
+    description: "Review VETTR scores, red flags, executive pedigree, and filing analysis in one place.",
   },
   {
     number: "03",
@@ -105,12 +105,12 @@ export default function Home() {
               <span className="text-vettr-accent">Before</span> You Invest
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              AI-powered due diligence for mining and resource stocks. VETR
+              AI-powered due diligence for mining and resource stocks. VETTR
               Scores, Red Flag Detection, Executive Pedigree tracking — all in
               one app.
             </p>
-            <div className="mt-10 flex justify-center" id="download">
-              <DownloadButtons />
+            <div className="mt-10" id="waitlist">
+              <JoinWaitlist />
             </div>
           </div>
         </div>
@@ -207,11 +207,11 @@ export default function Home() {
               Ready to make smarter investment decisions?
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto mb-8">
-              Join thousands of investors who use VETTR to vet mining and
-              resource stocks before they invest.
+              Be the first to know when VETTR launches. Join the waitlist and
+              get early access to smarter stock vetting.
             </p>
-            <div className="flex justify-center mb-8">
-              <DownloadButtons />
+            <div className="mb-8">
+              <JoinWaitlist />
             </div>
             <Link
               href="/developers"

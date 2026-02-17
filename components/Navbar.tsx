@@ -37,10 +37,10 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#download"
+              href="https://vettr-web.vercel.app"
               className="text-sm font-medium bg-vettr-accent text-vettr-navy px-4 py-2 rounded-lg hover:bg-vettr-accent/90 transition-colors"
             >
-              Download App
+              Go to App
             </Link>
           </div>
 
@@ -98,11 +98,11 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#download"
+              href="https://vettr-web.vercel.app"
               onClick={() => setMobileOpen(false)}
               className="block text-sm font-medium bg-vettr-accent text-vettr-navy px-4 py-2 rounded-lg hover:bg-vettr-accent/90 transition-colors text-center mt-2"
             >
-              Download App
+              Go to App
             </Link>
           </div>
         </div>
