@@ -141,8 +141,8 @@ export default function Home() {
               <span className="text-vettr-accent">smarter</span> investing
             </h2>
             <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-              Comprehensive tools built specifically for mining and resource
-              stock analysis.
+              Comprehensive tools built for smarter stock analysis and
+              portfolio monitoring.
             </p>
           </div>
 
