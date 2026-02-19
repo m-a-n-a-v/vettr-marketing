@@ -12,9 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "VETTR - Vet Your Stocks Before You Invest",
   description:
-    "AI-powered due diligence for mining and resource stocks. VETTR Scores, Red Flag Detection, Executive Pedigree tracking, and real-time alerts — all in one app.",
+    "AI-powered due diligence for the stocks you care about. VETTR Scores, Red Flag Detection, Executive Pedigree tracking, and real-time alerts — all in one app.",
   keywords: [
-    "mining stocks",
+    "stock research",
     "stock analysis",
     "due diligence",
     "VETTR score",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VETTR - Vet Your Stocks Before You Invest",
     description:
-      "AI-powered due diligence for mining and resource stocks. VETTR Scores, Red Flag Detection, Executive Pedigree tracking, and real-time alerts.",
+      "AI-powered due diligence for the stocks you care about. VETTR Scores, Red Flag Detection, Executive Pedigree tracking, and real-time alerts.",
     type: "website",
     locale: "en_US",
     siteName: "VETTR",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "VETTR - Vet Your Stocks Before You Invest",
     description:
-      "AI-powered due diligence for mining and resource stocks.",
+      "AI-powered due diligence for the stocks you care about.",
   },
 };
 

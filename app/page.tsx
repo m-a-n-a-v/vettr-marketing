@@ -75,7 +75,7 @@ const steps = [
   {
     number: "01",
     title: "Search",
-    description: "Find mining and resource stocks from our curated database of tracked companies.",
+    description: "Find the stocks you care about from our curated database of tracked companies.",
   },
   {
     number: "02",
@@ -105,7 +105,7 @@ export default function Home() {
               <span className="text-vettr-accent">Before</span> You Invest
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              AI-powered due diligence for mining and resource stocks. VETTR
+              AI-powered due diligence for the stocks you care about. VETTR
               Scores, Red Flag Detection, Executive Pedigree tracking — all in
               one app.
             </p>
