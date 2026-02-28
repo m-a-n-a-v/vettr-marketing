@@ -22,7 +22,7 @@ const features = [
     ),
     title: "VETTR Score",
     description:
-      "Proprietary scoring from 0-100 analyzing financials, management, and filings to give you a clear picture of stock quality.",
+      "Proprietary 4-pillar scoring from 0-100 analyzing financial survival, operational efficiency, shareholder structure, and market sentiment.",
   },
   {
     icon: (

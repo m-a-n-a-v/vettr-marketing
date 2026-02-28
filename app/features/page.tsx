@@ -7,38 +7,38 @@ import JoinWaitlist from "@/components/JoinWaitlist";
 const scoreRanges = [
   {
     range: "90 - 100",
-    label: "Elite (Strong Buy)",
-    color: "bg-emerald-500",
-    textColor: "text-emerald-400",
-    description: "Rare combination of cash, pedigree, and structure",
+    label: "Exceptional",
+    color: "bg-[#198754]",
+    textColor: "text-[#198754]",
+    description: "Exceptional fundamentals, strong FCF/runway, insider buying, bullish momentum",
   },
   {
     range: "75 - 89",
-    label: "Contender (Accumulate)",
-    color: "bg-teal-500",
-    textColor: "text-teal-400",
-    description: "Good company, minor flaws — e.g., slightly low liquidity",
+    label: "Healthy",
+    color: "bg-[#84CC16]",
+    textColor: "text-[#84CC16]",
+    description: "Healthy company, positive cash runway, moderate uptrend, favorable analyst targets",
   },
   {
     range: "50 - 74",
-    label: "Watchlist (Hold)",
-    color: "bg-amber-500",
-    textColor: "text-amber-400",
-    description: "Average. Needs a catalyst or cash injection",
+    label: "Neutral",
+    color: "bg-[#FBBF24]",
+    textColor: "text-[#FBBF24]",
+    description: "Awaiting catalyst, mixed technicals, or near warrant overhang ceiling",
   },
   {
     range: "30 - 49",
-    label: "Speculative (Avoid)",
-    color: "bg-orange-500",
-    textColor: "text-orange-400",
-    description: "High risk, high dilution, or low cash",
+    label: "High Risk",
+    color: "bg-[#F97316]",
+    textColor: "text-[#F97316]",
+    description: "Short cash runway, heavy dilution, rising short interest, breaking moving averages",
   },
   {
     range: "0 - 29",
-    label: "Toxic (Strong Sell)",
-    color: "bg-red-500",
-    textColor: "text-red-400",
-    description: "Imminent bankruptcy risk or lifestyle company",
+    label: "Toxic",
+    color: "bg-[#DC2626]",
+    textColor: "text-[#DC2626]",
+    description: "Imminent dilution threat, high short interest, insider dumping, active downward momentum",
   },
 ];
 
@@ -161,9 +161,11 @@ export default function FeaturesPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white">VETTR Score</h2>
             <p className="mt-3 text-gray-400 max-w-xl mx-auto">
-              Our proprietary scoring system rates stocks from 0 to 100 based on
-              a comprehensive analysis of financials, management quality, and
-              public filings.
+              Our proprietary 4-pillar scoring system rates stocks from 0 to 100:
+              Financial Survival (35%) — cash runway with FCF Rule + debt health.
+              Operational Efficiency (25%) — sector-specific operational ratios.
+              Shareholder Structure (25%) — executive pedigree, dilution, SEDI insider conviction, warrant overhang.
+              Market Sentiment (15%) — liquidity, technical momentum, news velocity, short interest, analyst consensus.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">

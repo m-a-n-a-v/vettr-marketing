@@ -14,24 +14,24 @@ The VETTR Score is not a price prediction. It is a diagnostic tool that tells yo
 
 ## How Scores Are Calculated
 
-The VETTR Score is built from four weighted pillars, each analysing a different dimension of the company:
+The VETTR Score V2 is built from four weighted pillars, each analysing a different dimension of the company:
 
-- **Financial Health (30%)** — Examines cash position, burn rate, debt-to-equity ratio, revenue trends, and working capital. Companies with strong treasuries and low debt score higher.
-- **Management Quality (25%)** — Evaluates the executive team and board of directors based on their track records, past successes and failures, and involvement across multiple public companies.
-- **Filing Analysis (25%)** — Uses AI to parse recent financial statements, MD&A disclosures, and technical reports. Consistent, transparent filings boost the score; late or vague disclosures lower it.
-- **Red Flag Count (20%)** — Every active red flag — insider selling, dilution events, related-party transactions, cease trade orders — pulls the score down proportionally.
+- **Financial Survival (35%)** — Cash runway using the FCF Rule (if Free Cash Flow > 0, the company receives a perfect cash runway score) and solvency measured by debt-to-assets ratio. Companies with strong free cash flow and low leverage score highest.
+- **Operational Efficiency (25%)** — Sector-specific operational ratios tailored to each company type. Mining companies are evaluated on exploration-to-opex ratio, tech companies on R&D-to-opex ratio, and producers on gross profit margin. Separate scoring targets apply for pre-revenue companies (70% weight) and producers (30% weight).
+- **Shareholder Structure (25%)** — Executive pedigree (30%), dilution penalty (30%), SEDI insider conviction with a dynamic adjuster (20%), and warrant overhang proximity (20%). This pillar captures whether insiders are aligned with shareholders or working against them.
+- **Market Sentiment & Price Action (15%)** — Liquidity health (20%), technical momentum versus the 20-day moving average (25%), news velocity (15%), short squeeze risk (20%), and analyst consensus distance from current price (20%).
 
-Each pillar generates a sub-score, and the weighted combination produces the final VETTR Score.
+Each pillar generates a sub-score, and the weighted combination produces the final VETTR Score. When a pillar lacks sufficient data, a **Re-Weighting Safety Valve** redistributes that pillar's weight proportionally across the remaining pillars so that no score is unfairly penalised for missing information.
 
 ## What the Ranges Mean
 
 | Score Range | Label | Color | What It Means |
 |---|---|---|---|
-| **90 – 100** | Elite (Strong Buy) | Emerald | Rare combination of cash, pedigree, and structure. This company passes the vetting process with flying colours. |
-| **75 – 89** | Contender (Accumulate) | Teal | Good company with minor flaws — e.g., slightly low liquidity. Review the flagged items before committing capital. |
-| **50 – 74** | Watchlist (Hold) | Amber | Average. Needs a catalyst or cash injection. The company may have areas to monitor. |
-| **30 – 49** | Speculative (Avoid) | Orange | High risk, high dilution, or low cash. Multiple concerns warrant extra caution. |
-| **0 – 29** | Toxic (Strong Sell) | Red | Imminent bankruptcy risk or lifestyle company. Significant risk factors are present across multiple areas. |
+| **90 – 100** | Exceptional | Dark Green (#198754) | Exceptional fundamentals, strong FCF/runway, insider buying, and bullish momentum. This company passes every pillar with high marks. |
+| **75 – 89** | Healthy | Lime Green (#84CC16) | Healthy company with positive cash runway, moderate uptrend, and favorable analyst targets. Minor areas to watch but overall strong. |
+| **50 – 74** | Neutral | Yellow (#FBBF24) | Awaiting catalyst, mixed technicals, or near warrant overhang ceiling. The company may need a trigger to move decisively. |
+| **30 – 49** | High Risk | Orange (#F97316) | Short cash runway, heavy dilution, rising short interest, or breaking key moving averages. Multiple concerns warrant extra caution. |
+| **0 – 29** | Toxic | Deep Red (#DC2626) | Imminent dilution threat, high short interest, insider dumping, and active downward momentum. Significant risk factors across multiple pillars. |
 
 ## How Often Do Scores Update?
 
