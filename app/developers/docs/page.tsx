@@ -146,8 +146,9 @@ export default async function DocsPage() {
                 API Reference
               </h1>
               <p className="text-gray-400 max-w-2xl">
-                {spec.info?.description ||
-                  "Complete reference for all VETTR API endpoints. Browse by resource group, view request methods, and jump to interactive testing."}
+                Complete reference for all VETTR API endpoints. Browse by
+                resource group, view request methods, and jump to interactive
+                testing in Swagger UI.
               </p>
               {totalEndpoints > 0 && (
                 <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
